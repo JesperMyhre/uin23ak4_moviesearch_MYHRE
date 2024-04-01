@@ -1,7 +1,7 @@
 .bookSection {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
 }
 
@@ -9,20 +9,24 @@
   background-color: white;
   padding: 5px;
   width: 50%;
+  height: 350px;
   margin: 10px 5px;
   border-radius: 10px;
   display: flex;
+
   
   img{
-    padding: 1rem;
+    margin: 1rem;
     border-radius: 5px;
+    width: 250px;
   }
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .bookCard {
-    width: 40%;
+    width: 70%;
+    min-width: 30%;
     flex-direction: column;
 
     span {

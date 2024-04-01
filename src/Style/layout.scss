@@ -1,6 +1,22 @@
-:root{
-  box-sizing: border-box;
-  background-color: lightsteelblue;
-  display: flex;
-  justify-content: center;
+#scrollButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: white; 
+  color: white; 
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 150px;
+
+  img{
+    width: 25px;
+  }
+}
+
+#scrollButton:hover {
+  background-color: #adadad;
 }

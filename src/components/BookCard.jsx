@@ -14,9 +14,11 @@ export default function BookCard({ content }) {
                 <p>{item.author_name}</p>
                 <p>Release year: {item.first_publish_year}</p>
                 <p>Rating: {item.ratings_average}</p>
-                {item.id_amazon && item.id_amazon.length >= 2 && (
+                {item.id_amazon && item.id_amazon.length >= 2 ? (
                   /*knappen åpna bare til amazon landing page. ChatGPT belærte meg om hvordan form submits
-                kan bli blokkert pga js events og valideringer, samtidig som hen spytta ut det her*/
+                kan bli blokkert pga js events og valideringer, samtidig som hen spytta ut det her.
+                Sjekker om id_amazon inneholder elementer, og skriver ut index[1] dersom det er det,
+                */
                   <form
                     action={`https://www.amazon.com/s`}
                     target="_blank"
@@ -30,8 +32,9 @@ export default function BookCard({ content }) {
                   >
                     <button type="submit">Mer info</button>
                   </form>
+                ) : (
+                  <button>Ingen info</button>
                 )}
-                {""}
               </span>
             </article>
           ))}

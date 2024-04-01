@@ -5,6 +5,7 @@ import "./index.css";
 import "./Style/bookCard.scss";
 import "./Style/layout.scss";
 import "./Style/main.scss";
+import "./Style/searchBar.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

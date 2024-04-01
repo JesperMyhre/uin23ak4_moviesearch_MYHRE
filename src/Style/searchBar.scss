@@ -1,0 +1,41 @@
+.navBar {
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  display: flex;
+  align-items: center;
+
+  box-shadow: 0px 1px 3px gray;
+
+  form{
+    margin-left: 5px;
+  }
+  .logo{
+    height: 40px;
+  }
+  .searchBar{
+    border: 1px solid gray;
+    border-radius: 30px;
+    height: 30px;
+    width: 200px;
+  }
+  .searchButton{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(0, 57, 0);
+    color: white;
+    padding: .3rem .7rem;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .searchButton:hover{
+    background-color: rgb(0, 105, 0);
+  }
+}
