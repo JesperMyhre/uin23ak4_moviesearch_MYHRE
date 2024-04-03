@@ -11,13 +11,17 @@ export default function BookCard({ content }) {
               ></img>
               <span className="bookInfo">
                 <h3>{item.title}</h3>
-                <p>{item.author_name}</p>
+                <p>Author: {item.author_name}</p>
                 <p>Release year: {item.first_publish_year}</p>
-                <p>Rating: {item.ratings_average}</p>
+                {!item.ratings_average ? (
+                  <p>Rating: No rating</p>
+                ) : (
+                  <p>Rating: {item.ratings_average}</p>
+                )}
                 {item.id_amazon && item.id_amazon.length >= 2 ? (
                   /*knappen åpna bare til amazon landing page. ChatGPT belærte meg om hvordan form submits
                 kan bli blokkert pga js events og valideringer, samtidig som hen spytta ut det her.
-                Sjekker om id_amazon inneholder elementer, og skriver ut index[1] dersom det er det,
+                Sjekker om id_amazon inneholder elementer, og skriver ut index[1] dersom det er det.
                 */
                   <form
                     action={`https://www.amazon.com/s`}
@@ -30,10 +34,12 @@ export default function BookCard({ content }) {
                       window.open(`https://www.amazon.com/s?k=${searchQuery}`);
                     }}
                   >
-                    <button type="submit">Mer info</button>
+                    <button className="amazonButton" type="submit">
+                      Amazon
+                    </button>
                   </form>
                 ) : (
-                  <button>Ingen info</button>
+                  <button className="noButton">Ingen info</button>
                 )}
               </span>
             </article>

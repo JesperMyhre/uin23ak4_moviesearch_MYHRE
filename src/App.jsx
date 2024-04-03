@@ -20,6 +20,7 @@ export default function App() {
   useEffect(() => {
     getData();
   }, [query]);
+  console.log(content.ratings_average);
 
   return (
     <>
